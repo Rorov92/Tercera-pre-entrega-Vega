@@ -5,7 +5,7 @@ from productos.forms import *
 
 def listar_juegos(request):
     contexto = {
-        "juegos" : listar_juegos.objects.all()
+        "Juegos" : Juegos.objects.all()
     }
     http_response = render(
     request=request,
@@ -35,7 +35,7 @@ def add_juego(request):
            consola = data["consola"]
            edad_recomendada = data["edad_recomendada"]
            codigo = data["codigo"]
-           Juego_s = Juegos(titulo=titulo, consola=consola, edad_recomendada=edad_recomendada, codigo=codigo)
+           juego = Juegos(titulo=titulo, consola=consola, edad_recomendada=edad_recomendada, codigo=codigo)
            juego.save()
 
            url_exitosa = reverse("listar_juegos")
